@@ -1,0 +1,14 @@
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: service_tx_group
+  enable-auto-data-source-proxy: false
+  service:
+    vgroupMapping:
+      service_tx_group: cyjr-seata-server
+  # 服务发现 建立连接
+  registry:
+    type: consul
+    consul:
+      cluster: cyjr-seata-server
+      server-addr: 192.168.1.100:8500
